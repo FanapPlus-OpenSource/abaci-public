@@ -5,7 +5,7 @@ Abaci is a high-performance score and rank calculation engine.
 
 
 
-##Introduction
+## Introduction
 
 ### What is score? What is rank?!
 
