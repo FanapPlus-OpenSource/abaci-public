@@ -14,6 +14,7 @@ Abaci is a high-performance score and rank calculation engine.
      - [Calculated Topic](#2-calculated-topic)
      - [Time-based topic](#3-time-based-topic)
    - [Leaderboard](#leaderboard)
+3. [Sample Scenario](#sample-scenario)
 
 
 ## Introduction
