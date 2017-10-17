@@ -1,6 +1,6 @@
-![Abacus](Abacus.png)
+![Abacus](_support/Abacus.png)
 
-# What the ... (!) is Abaci! 
+# What the ... (!) is Abaci? 
 
 Abaci is a high-performance score and rank calculation engine.
 
@@ -76,11 +76,11 @@ A `calculated topic` is the **parent** of one or more `simple topic`, which its 
 
 In the *tree* analogy, a calculated topic is a parent node, which has weights on its edges that connect it to its children. These weights are the *coefficients* of its `formula`.
 
-![Calculated_Topic](Calculated_Topic.jpg)
+![Calculated_Topic](_support/Calculated_Topic.jpg)
 
 In this diagram c1,c2 and c3 are *coefficients* of the formula, so the point (*score*) of `account 1` in `calculated` topic node is computed according to this formula:
 
-![Formula](Formula.jpg)
+![Formula](_support/Formula.jpg)
 
 It's clear that a `point` can't be added to a `calculated topic` directly.
 
