@@ -1,8 +1,19 @@
-# ![Abacus](Abacus.png)What the ... (!) is Abaci! 
+![Abacus](Abacus.png)
+
+# What the ... (!) is Abaci! 
 
 Abaci is a high-performance score and rank calculation engine.
 
-[TOC]
+1. [Introduction](#introduction)
+   - [What is score? What is rank?!](#what-is-score-what-is-rank)
+   - [It seems very simple! Do I need it?](#it-seems-very-simple-do-i-need-it)
+   - [What does it calculate?](#what-does-it-calculate)
+2. [Building blocks](#building-blocks)
+   - [Topic](#topic)
+     - [Simple Topic](#1-simple-topic)
+     - [Calculated Topic](#2-calculated-topic)
+     - [Time-based topic](#3-time-based-topic)
+   - [Leaderboard](#leaderboard)
 
 
 ## Introduction
