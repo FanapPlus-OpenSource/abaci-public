@@ -91,7 +91,7 @@ A `time-based topic` is a topic (*simple* or *calculated*), which has a **validi
 
  ### Leaderboard
 
-Although, `Abaci` doesn't currently has a `leaderboard` object, but whenever the ranks of a bunch of `accounts` is calculated, actually we have of kind of `leaderboard`.
+Although, `Abaci` doesn't currently has a `leaderboard` object, but whenever the ranks of a bunch of `accounts` is calculated, actually we have a kind of `leaderboard`.
 
 `Abaci` contains API's for querying the rank of a single account or an array of accounts. These API's are grouped under the title of `Leaderboard`.
 
