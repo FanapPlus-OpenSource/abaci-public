@@ -3,6 +3,7 @@
 # What the ... (!) is Abaci? 
 
 Abaci is a high-performance score and rank calculation engine.
+[API Specification]: https://api-docs.io/preview/SmWMJnukKyHRDp6K8/topics/create-topic?apiKey=Ya88izPobbSKRH8Sb
 
 1. [Introduction](#introduction)
    - [What is score? What is rank?!](#what-is-score-what-is-rank)
