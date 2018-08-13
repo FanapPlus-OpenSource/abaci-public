@@ -35,7 +35,7 @@ If all you need is determining the rank of players in the simple scenario, which
 
 But for a moment, suppose the number of players become more than *ten thousands*! Think of the processing power, which is needed to *sort* the ranks *every time* you add a point to a player.
 
- Up to now, we supposed that all the matches have the same role, when contributing to the rank of participants. But, what if each match has its own value and the points, which earned in a match should be calculated differently than the other matches.
+Up to now, we supposed that all the matches have the same role, when contributing to the rank of participants. But, what if each match has its own value and the points, which earned in a match should be calculated differently than the other matches.
 
 To make things worse, let's impose another constrain: each match has a `validity period` and beyond that, no points should be accepted for any player on that match.
 
@@ -59,7 +59,7 @@ The generalization of the **match** concept in `Abaci` is called `Topic`. It is 
 
 In `Abaci` subjects are denoted by `account-id`.
 
-A `topic` can be **simple** or **calculated**; And a *calculated* `topic` can have a **validity period**.
+A `topic` can be **simple** or **calculated**; And the relation between *simple* and *calculated* `topic` can have a **validity period**.
 
 `Topic` ,`Leaderboard` and `account-id` are the building blocks of `Abaci`.
 
@@ -71,13 +71,13 @@ Whenever we want to register points of subjects and then determine their ranks i
 
 A `simple topic` is the basic entity, which can accept `points`. A topic has a broad domain, from a specific *match* to *school test* or an *advertising campaign*; in which we want to offer bonus to users who become member. A `topic` can also be a resource, which we want to bill users based on their usage; In this case the unit of usage are `points`.
 
-If the **hierarchy** of topics is represented as a tree, then `simple topics` form the **leaf nodes**.
+If the **hierarchy** of topics is represented as a directed acyclic graph, then `simple topics` form the **source nodes**.
 
 #### 2. Calculated Topic
 
-A `calculated topic` is the **parent** of one or more `simple topic`, which its points is automatically calculated based on its children and its `formula`. In the current version, the `formula` is a *polynomial*, which its *variables* are the child topics and its *coefficients* is recorded inside the data model of the parent `calculated nodes`.
+A `calculated topic` is the **aggregator** of one or more `simple topic`, which its points is automatically calculated based on its sources and its `formula`. In the current version, the `formula` is a *polynomial*, which its *variables* are the source topics and its *coefficients* is recorded inside the data model of the `aggregator nodes`.
 
-In the *tree* analogy, a calculated topic is a parent node, which has weights on its edges that connect it to its children. These weights are the *coefficients* of its `formula`.
+In the *DAG* analogy, a calculated topic is a non-source node, which has weights on its edges that connect it to its sources. These weights are the *coefficients* of its `formula`.
 
 ![Calculated_Topic](_support/Calculated_Topic.jpg)
 
@@ -87,11 +87,7 @@ In this diagram c1,c2 and c3 are *coefficients* of the formula, so the point (*s
 
 It's clear that a `point` can't be added to a `calculated topic` directly.
 
-#### 3. Time-based topic
-
-A `time-based topic` is a topic (*simple* or *calculated*), which has a **validity period**. This kind of topic can accept (or calculate) points only during that period of time and when it is expired, it can't be found ever. :astonished:
-
- ### Leaderboard
+### Leaderboard
 
 Although, `Abaci` doesn't currently has a `leaderboard` object, but whenever the ranks of a bunch of `accounts` is calculated, actually we have a kind of `leaderboard`.
 
@@ -105,10 +101,10 @@ To make these abstract ideas more concreate, let's have a sample scenario. Let's
 
 We want to calculate the normalized mark of each student, besides his/her rank among all other students over each examination period and also over all exams.
 
-It's clear that for each course, we should have a simple topic. To apply the course-mark-factors, we need a calculated topic, which is the parent of all courses and have a formula with the coefficient of the course factors. Moreover, since each examination has a specific period, a time-base rule is required to guarantee that the marks go to their corresponding exam. In this way, we can determine the rank of each student in each course and in each examination.
+It's clear that for each course, we should have a simple topic. To apply the course-mark-factors, we need a calculated topic, which is the aggregator of all courses and have a formula with the coefficient of the course factors. Moreover, since each examination has a specific period, a time-base rule is required to guarantee that the marks go to their corresponding exam. In this way, we can determine the rank of each student in each course and in each examination.
 
-Finally, since ranks over all exams are needed, we put another calculated topic as the parent of the exams topics. Here is the proposed topic graph for this scenario:
+Finally, since ranks over all exams are needed, we put another calculated topic as the aggregator of the exams topics. Here is the proposed topic graph for this scenario:
 
 ![Sample_Scenario](_support/Sample_Scenario.jpg)
 
-The labels over the edges indicates the coefficients and time-rules of the parent-child relation. 
+The labels over the edges indicates the coefficients and time-rules of the source-aggregator relation. 
