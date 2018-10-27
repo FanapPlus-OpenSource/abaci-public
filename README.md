@@ -97,7 +97,7 @@ Although, `Abaci` doesn't currently has a `leaderboard` object, but whenever the
 
 ## Sample Scenario
 
-To make these abstract ideas more concreate, let's have a sample scenario. Let's in a high-school, we want to evaluate the educational progress of students. There are multiple examination period in the school, in which a series of examination for all courses takes place. To consider the difficulty and importance of each course, the earned raw mark of each course should be multiplied by a specific factor. The sum of the normalized mark over all courses gives the total normalized mark of that student.
+To make these abstract ideas more concrete, let's have a sample scenario. Let's in a high-school, we want to evaluate the educational progress of students. There are multiple examination period in the school, in which a series of examination for all courses takes place. To consider the difficulty and importance of each course, the earned raw mark of each course should be multiplied by a specific factor. The sum of the normalized mark over all courses gives the total normalized mark of that student.
 
 We want to calculate the normalized mark of each student, besides his/her rank among all other students over each examination period and also over all exams.
 
